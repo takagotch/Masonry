@@ -170,6 +170,23 @@ var msnry = Masonry.data( $('.grid')[0] )
 var grid = doument.querySelector('.grid')
 var msnry = Masonry.data( grid )
 var msnry = Masonry.data('.grid')
+
+var $grid = $('.grid').masonry({...});
+function onLayout(){
+  console.log('layout done');
+}
+$grid.on( 'layoutComplete', onLayout );
+$grid.off( 'layoutComplete', onLayout );
+$grid.one( 'layoutComplete', function(){
+  console.log('layout done, just this one time');
+});
+
+$grid.on( 'layoutComplete', function( event, items ){
+  console.log( items.length );
+});
+msnry.on( 'layoutComplete', function( items ){
+  console.log( items.length );
+})
 ```
 
 ```
