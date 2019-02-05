@@ -15,6 +15,30 @@ https://masonry.desandro.com/
 .grid-sizer,
 .grid-item { width: 20%; }
 .grid-item--width2 { width: 40%; }
+
+itemSelector: '.grid-item'
+
+.grid-sizer,
+.grid-item { width: 20% }
+.grid-item--width2 { width: 40%; }
+
+columnWidth: '.grid-sizer',
+itemSelector: '.grid-item',
+percentPosition: true
+
+columnWidth: '.grid-sizer'
+columnWidth: $grid.find('.grid-sizer')[0]
+
+.grid-sizer { width: 33.333%; }
+@media screen and (min-width: 768px){
+  .grid-sizer { width: 20%; }
+}
+
+gutter: 10
+
+.gridd-item {
+  margin-bottom: 10px;
+}
 ```
 
 ```js
